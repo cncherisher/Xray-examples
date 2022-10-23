@@ -46,12 +46,13 @@ get_caddy() {
 
     local caddy_link="https://github.com/klzgrad/forwardproxy/releases/latest/download/caddy-forwardproxy-naive.tar.xz"
 
-    $(which mkdir) -p "/etc/caddy"
+    mkdir -p "/etc/caddy"
+	touch /etc/caddy/Caddyfile
     printf "Cretated: %s\n" "/etc/caddy"
 
     wget "${caddy_link}" -O /tmp/caddy.tar.xz
     tar -xJf /tmp/caddy.tar.xz -C /tmp
-    cp /tmp/caddy-forwardproxy-naive/caddy //usr/local/bin/caddy
+    cp /tmp/caddy-forwardproxy-naive/caddy /usr/local/bin/caddy
     chmod +x /usr/local/bin/caddy
     printf "Installed: %s\n" "/usr/local/bin/caddy"
 

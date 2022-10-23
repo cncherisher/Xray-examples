@@ -1,0 +1,19 @@
+{
+email example@example.com #你的邮箱
+key_type p256
+}
+
+:443, example.com{
+	route {
+		@websocket {
+			header Connection Upgrade
+			header Upgrade websocket
+			path /wsapi #填写你的 path
+		}
+
+		reverse_proxy @websocket unix//dev/shm/Xray-Trojan-WS.socket
+
+		encode zstd gzip
+		reverse_proxy * http://localhost:8080 #默认回落
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "inbounds": [
+    {
+      "listen": "/dev/shm/Xray-Trojan-WS.socket,0666",
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "xxx"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/wsapi"
+        }
+      }
+    }
+  ]
+}

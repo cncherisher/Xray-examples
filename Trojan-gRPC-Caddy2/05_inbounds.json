@@ -1,0 +1,21 @@
+{
+  "inbounds": [
+    {
+      "listen": "/dev/shm/Xray-Trojan-gRPC.socket,0666",
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "xxx"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": ""
+        }
+      }
+    }
+  ]
+}

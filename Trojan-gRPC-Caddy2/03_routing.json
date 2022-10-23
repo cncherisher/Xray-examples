@@ -1,0 +1,18 @@
+{
+  "routing": {
+    "domainStrategy": "AsIs",
+    "domainMatcher": "hybrid",
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "blocked",
+        "domain": ["geosite:category-ads-all", "geosite:cn", "geosite:private"]
+      },
+      {
+        "type": "field",
+        "outboundTag": "blocked",
+        "ip": ["geoip:private", "geoip:cn"]
+      }
+    ]
+  }
+}

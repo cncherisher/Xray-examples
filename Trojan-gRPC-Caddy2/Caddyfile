@@ -1,0 +1,22 @@
+{
+email example@example.com #你的邮箱
+key_type p256
+}
+
+:443, example.com{
+	route {
+		@grpc {
+			protocol grpc
+			path /xxx # 填写你的 ServiceName
+		}
+
+		reverse_proxy @grpc unix//dev/shm/Xray-Trojan-gRPC.socket {
+			transport http {
+				versions h2c
+			}
+		}
+
+		encode zstd gzip
+		reverse_proxy * http://localhost:8080 #默认回落
+	}
+}

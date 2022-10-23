@@ -36,5 +36,3 @@ $ xray run -confdir /usr/local/etc/xray/conf
 
 0 directories, 10 files
 ```
-## grpc/ws等带有路径的需要配合nginx/caddy前置分流
-## 否则会报 501/404等错误
